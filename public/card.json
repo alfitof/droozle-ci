@@ -1,0 +1,9 @@
+{
+  "card": [
+    { "id": 1, "nama": "Heading Beach", "warna": "Army", "jenis": "Crewneck", "harga": 235.0, "gambar": "model1.png", "link": "shopee.com" },
+    { "id": 2, "nama": "Second Chances", "warna": "Black", "jenis": "T-shirt", "harga": 90.0, "gambar": "model2.png", "link": "shopee.com" },
+    { "id": 3, "nama": "Out of Fuel", "warna": "Beige", "jenis": "T-shirt", "harga": 90.0, "gambar": "model3.png", "link": "shopee.com" },
+    { "id": 4, "nama": "No Plans", "warna": "Dark Cream", "jenis": "Coach Jacket", "harga": 225.0, "gambar": "model4.png", "link": "shopee.com" },
+    { "id": 5, "nama": "Fortune Tellers", "warna": "Dusty Pink", "jenis": "T-shirt", "harga": 90.0, "gambar": "model5.png", "link": "shopee.com" }
+  ]
+}
