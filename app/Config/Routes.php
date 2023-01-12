@@ -42,6 +42,7 @@ $routes->get('/table', 'Content::table', ['filter' => 'role:admin']);
 $routes->get('/table/(:segment)', 'Content::detail/$1');
 $routes->get('/insertProd', 'Content::insert');
 $routes->get('/all', 'Content::all');
+$routes->get('/cart', 'Pages::cart');
 $routes->post('/saveProd', 'Content::saveProd');
 
 /*

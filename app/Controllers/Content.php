@@ -22,6 +22,7 @@ class Content extends BaseController
     {
         $data = [
             'title' => "All Product - Droozle.co",
+            'cart' => \Config\Services::cart(),
             'prod' => $this->prodModel->findAll()
         ];
         return view('allProduct', $data);
@@ -131,5 +132,46 @@ class Content extends BaseController
 
 
         return redirect()->to('/table');
+    }
+
+    public function check()
+    {
+        $cart = \Config\Services::cart();
+        $res =  $cart->contents();
+        echo '<pre>';
+        print_r($res);
+        echo '</pre>';
+    }
+
+    public function addCart()
+    {
+        $cart = \Config\Services::cart();
+        $cart->insert(array(
+            'id'      => $this->request->getPost('id'),
+            'qty'     => 1,
+            'price'   => $this->request->getPost('price'),
+            'name'    => $this->request->getPost('name'),
+            'options' => array(
+                'gambar' => $this->request->getPost('gambar'),
+                'tipe' => $this->request->getPost('tipe'),
+            )
+        ));
+        session()->setFlashdata('pesan', 'Produk ditambahkan ke keranjang');
+        return redirect()->to('/all');
+    }
+
+    public function clearCart()
+    {
+        $cart = \Config\Services::cart();
+        $cart->destroy();
+        return redirect()->to('/all');
+    }
+
+    public function delete($rowid)
+    {
+        $cart = \Config\Services::cart();
+        $cart->remove($rowid);
+        session()->setFlashdata('pesan', 'Produk telah dihapus');
+        return redirect()->to('/cart');
     }
 }

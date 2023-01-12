@@ -62,9 +62,23 @@
     <li class="nav-icon">
       <a href="/Pages/soon"><i class="fas fa-heart" id="wishlist"></i></a>
     </li>
-    <li class="nav-icon">
-      <a href="/Pages/cart"><i class="fas fa-shopping-cart"></i></a>
+    <?php $keranjang = \Config\Services::cart()->contents();
+    $jml_item = 0;
+    foreach ($keranjang as $key => $value) {
+      $jml_item = $jml_item + $value['qty'];
+    }
+    ?>
+    <li class="nav-item">
+      <a href="/cart" class="btn btn-outline-light rounded-full">
+        <span id="cartCouter" style="margin-right: 10px;"><?= $jml_item; ?></span>
+        <i class="fas fa-shopping-cart" id="shopcart"></i>
+      </a>
     </li>
+    <!-- <li class="nav-item">
+      <a href="/cart" class="button button--ghost">
+        <span id="cartCounter">1</span>
+        <img src="/img/cart.png" alt="" /></a>
+    </li> -->
   </div>
 </nav>
 <!-- Akhir Navbar -->

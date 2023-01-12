@@ -496,6 +496,10 @@ footer {
   color: rgb(223, 80, 80);
 }
 
+#shopcart:hover {
+  color: rgb(49, 49, 49);
+}
+
 .pagination {
   font-family: 'Poppins', sans-serif;
 }
@@ -608,6 +612,24 @@ footer {
 }
 .bg-grey {
   background-color: #eae8e8;
+}
+
+.button--ghost {
+  border: 2px solid;
+  background-color: transparent;
+  border-radius: 3rem;
+  padding: 6px 20px;
+  border: 2px solid;
+  display: flex;
+  align-items: center;
+}
+
+span#cartCounter {
+  padding-right: 10px;
+}
+
+.button--ghost:hover {
+  background: none;
 }
 
 @media (min-width: 1025px) {

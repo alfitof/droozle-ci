@@ -82,11 +82,10 @@ $data = json_decode($dataAPI, True);
     <div class="row g-0">
       <?php foreach ($prod as $p) : ?>
         <div class="col-md-3" style="padding: 15px;" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000">
+
           <div class="product-top">
             <img src="img/<?= $p["image"] ?>" />
-            <div class="overlay1">
-              <a href="//<?= $p['link']; ?>" class="buy-btn2">Buy Now</a>
-            </div>
+
           </div>
 
           <div class="product-bottom text-center">
