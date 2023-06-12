@@ -88,7 +88,7 @@
                                 <h5 class="text-uppercase">Total price</h5>
                                 <h5>Rp, <?= $subTotal; ?>.000</h5>
                             </div>
-                            <button type="button" class="btn btn-dark btn-block btn-lg" data-mdb-ripple-color="dark" onclick="location.href='/Content/clearCart'">Payment</button>
+                            <button type="button" class="btn btn-dark btn-block btn-lg" data-mdb-ripple-color="dark" onclick="location.href='/Payment'">Payment</button>
 
                         </div>
                     </div>

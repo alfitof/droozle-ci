@@ -39,11 +39,10 @@
               <li><a id="item" class="dropdown-item" href="/table">Detail Products</a></li>
             </ul>
           </li>
-        <?php else : ?>
-          <li class="nav-item">
-            <a class="nav-link text-white me-3" href="/all">All Product</a>
-          </li>
         <?php endif ?>
+        <li class="nav-item">
+          <a class="nav-link text-white me-3" href="/all">All Product</a>
+        </li>
 
         <?php if (!logged_in()) : ?>
           <li class="nav-item">

@@ -53,7 +53,6 @@ class Content extends BaseController
 
     public function saveProd()
     {
-        //validasi create
         $valid = $this->validate([
             'nama' => [
                 'label' => 'Nama Produk',
@@ -68,28 +67,17 @@ class Content extends BaseController
                 'rules' => 'required'
             ]
         ]);
-
         if (!$valid) {
             return redirect()->to('insertProd')->withInput();
         }
-
-        //upload file
-        $fileProd = $this->request->getFile('image');
-        $fileProd->move('img');
-        $namaSampul = $fileProd->getName();
-        $slug = url_title($this->request->getVar('nama'), '-', true);
+        $fileProd = $this->request->getFile('image'); $fileProd->move('img');
+        $namaSampul = $fileProd->getName(); $slug = url_title($this->request->getVar('nama'), '-', true);
         $this->prodModel->save([
-            'nama' => $this->request->getVar('nama'),
-            'slug' => $slug,
-            'tipe' => $this->request->getVar('tipe'),
-            'harga' => $this->request->getVar('harga'),
-            'link' => $this->request->getVar('link'),
-            'image' => $namaSampul
+            'nama' => $this->request->getVar('nama'), 'slug' => $slug,
+            'tipe' => $this->request->getVar('tipe'), 'harga' => $this->request->getVar('harga'),
+            'link' => $this->request->getVar('link'), 'image' => $namaSampul
         ]);
-
         session()->setFlashdata('pesan', 'Produk telah ditambahkan');
-
-
         return redirect()->to('/table');
     }
 
@@ -114,23 +102,15 @@ class Content extends BaseController
 
     public function updateProd($id)
     {
-        $fileProd = $this->request->getFile('image');
-        $fileProd->move('img');
-        $namaSampul = $fileProd->getName();
-        $slug = url_title($this->request->getVar('nama'), '-', true);
+        $fileProd = $this->request->getFile('image'); $fileProd->move('img');
+        $namaSampul = $fileProd->getName(); $slug = url_title($this->request->getVar('nama'), '-', true);
         $this->prodModel->update($id, [
-            'id' => $id,
-            'nama' => $this->request->getVar('nama'),
-            'slug' => $slug,
-            'tipe' => $this->request->getVar('tipe'),
-            'harga' => $this->request->getVar('harga'),
-            'link' => $this->request->getVar('link'),
+            'id' => $id, 'nama' => $this->request->getVar('nama'),
+            'slug' => $slug, 'tipe' => $this->request->getVar('tipe'),
+            'harga' => $this->request->getVar('harga'), 'link' => $this->request->getVar('link'),
             'image' => $namaSampul
         ]);
-
         session()->setFlashdata('pesan', 'Produk berhasil diubah');
-
-
         return redirect()->to('/table');
     }
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 11 Jan 2023 pada 10.51
+-- Waktu pembuatan: 12 Jan 2023 pada 19.24
 -- Versi server: 10.4.17-MariaDB
 -- Versi PHP: 8.0.12
 
@@ -156,7 +156,10 @@ INSERT INTO `auth_logins` (`id`, `ip_address`, `email`, `user_id`, `date`, `succ
 (48, '::1', 'admin@gmail.com', 3, '2022-12-29 12:17:08', 1),
 (49, '::1', 'admin@gmail.com', 3, '2022-12-29 12:20:31', 1),
 (50, '::1', 'admin@gmail.com', 3, '2022-12-29 19:59:25', 1),
-(51, '::1', 'admin@gmail.com', 3, '2023-01-02 03:29:48', 1);
+(51, '::1', 'admin@gmail.com', 3, '2023-01-02 03:29:48', 1),
+(52, '::1', 'admin', NULL, '2023-01-12 12:17:10', 0),
+(53, '::1', 'admin', NULL, '2023-01-12 12:17:20', 0),
+(54, '::1', 'admin@gmail.com', 3, '2023-01-12 12:18:45', 1);
 
 -- --------------------------------------------------------
 
@@ -233,7 +236,7 @@ CREATE TABLE `drz1` (
 --
 
 INSERT INTO `drz1` (`id`, `nama`, `slug`, `tipe`, `harga`, `link`, `image`, `created_at`, `updated_at`) VALUES
-(12, 'Basic Pants co', 'basic-pants-co', 'Select Type', 122, 'shopee.com', 'img2.JPG', NULL, '2022-12-29'),
+(12, 'Basic Pants co', 'basic-pants-co', 'Pants', 122, 'shopee.com', 'p21_2.png', NULL, '2023-01-12'),
 (13, 'Heading of the Beach', 'hotb', 'Totebag', 39, 'shopee.com', 'p7.png', NULL, NULL),
 (14, 'Beautiful Disaster', 'beautiful-disaster', 'T-shirt', 150, 'shopee.com', 'p8.png', NULL, NULL),
 (67, 'Fjok - Black', 'fjok-black', 'Mask', 25, 'shopee', 'p19.png', '2022-11-17', '2022-11-17'),
@@ -249,8 +252,7 @@ INSERT INTO `drz1` (`id`, `nama`, `slug`, `tipe`, `harga`, `link`, `image`, `cre
 (77, 'Youth Living', 'youth-living', 'Caps', 85, 'shopee.com', 'p16_1.png', '2022-12-22', '2022-12-22'),
 (78, 'My Way', 'my-way', 'T-shirt', 90, 'shopee.com', 'p17_1.png', '2022-12-22', '2022-12-22'),
 (79, 'Sunspot Club', 'sunspot-club', 'T-shirt', 90, 'shopee.com', 'p18_1.png', '2022-12-22', '2022-12-22'),
-(80, 'Son of A Beach Sinchan', 'son-of-a-beach-sinchan', 'T-shirt', 90, 'shopee.com', 'p20_1.png', '2022-12-22', '2022-12-22'),
-(81, 'Being You', 'being-you', 'Select Type', 90, 'shopee.com', 'pc (1).png', '2022-12-22', '2022-12-29');
+(80, 'Son of A Beach Sinchan', 'son-of-a-beach-sinchan', 'T-shirt', 90, 'shopee.com', 'p20_1.png', '2022-12-22', '2022-12-22');
 
 -- --------------------------------------------------------
 
@@ -413,7 +415,7 @@ ALTER TABLE `auth_groups`
 -- AUTO_INCREMENT untuk tabel `auth_logins`
 --
 ALTER TABLE `auth_logins`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- AUTO_INCREMENT untuk tabel `auth_permissions`
@@ -437,7 +439,7 @@ ALTER TABLE `auth_tokens`
 -- AUTO_INCREMENT untuk tabel `drz1`
 --
 ALTER TABLE `drz1`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
 
 --
 -- AUTO_INCREMENT untuk tabel `migrations`
